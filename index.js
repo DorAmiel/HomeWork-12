@@ -1,8 +1,8 @@
 //Ex1
-const runEx1 = () => {
+const runEx1 = async() => {
     let minNum = Number(document.getElementById("min-number-ex-1").value)
     let maxNum = Number(document.getElementById("max-number-ex-1").value)
-    let myPromise = generate7BoomAfterDelayAsync(minNum, maxNum)
+    let myPromise = await generate7BoomAfterDelayAsync(minNum, maxNum)
     setTimeout(() => {
         myPromise
             .then(() => {
@@ -32,10 +32,10 @@ const generate7BoomAfterDelayAsync = (min, max) => {
 
 
 //EX2
-const runEx2 = () => {
+const runEx2 = async() => {
     let minNum = Number(document.getElementById("min-number-ex-2").value)
     let maxNum = Number(document.getElementById("max-number-ex-2").value)
-    let promise = generate7BoomAfterDelayAsync(minNum, maxNum)
+    let promise = await generate7BoomAfterDelayAsync(minNum, maxNum)
     promise.then(() => {
             alert("You Got a Prime Number !!")
         })
@@ -64,8 +64,8 @@ const generatePrimeNumberAfterDelayAsync = (min, max) => {
 //Ex3
 
 let animalsList = [`Kitty`, `Puppy`, `Bunny`, `Parrot`, `Scorpion`, `Spider`, `Cockroach`]
-const runEx3 = () => {
-    generateCuteAnimalAfterDelayAsync()
+const runEx3 = async() => {
+    await generateCuteAnimalAfterDelayAsync()
         .then((cuteAnimal) => {
             alert(`Here is your Cute ${cuteAnimal}`)
         }).catch((badAnimal) => {
@@ -112,9 +112,9 @@ const generateCuteAnimalAfterDelayAsync = () => {
 
 let weekDays = ['Sunday', `Monday`, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-const runEx4 = () => {
+const runEx4 = async() => {
     console.log("Start")
-    generateWorkingDayAfterDelayAsync()
+    await generateWorkingDayAfterDelayAsync()
         .then((day) => {
             alert(`Go to work it is ${day} today`)
         }).catch((day) => {
@@ -142,8 +142,8 @@ const generateWorkingDayAfterDelayAsync = () => {
 
 //EX5
 
-const runEx5 = () => {
-    getArrayFromServerAsync(10)
+const runEx5 = async() => {
+    await getArrayFromServerAsync(10)
         .then((array) => {
             alert(array)
         }).catch((randomNumber) => {
@@ -173,8 +173,8 @@ const getArrayFromServerAsync = (size) => {
 //EX6
 let pizza = {}
 
-const runEx6 = () => {
-    getPizzaFromServerAsync()
+const runEx6 = async() => {
+    await getPizzaFromServerAsync()
         .then(() => {
             alert(JSON.stringify(pizza, null, 4));
         }).catch(() => {
